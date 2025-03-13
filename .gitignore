@@ -1,0 +1,6 @@
+# Files not to be uploaded to the repository
+node_modules/
+dist/
+coverage/
+.env
+```
