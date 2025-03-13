@@ -21,6 +21,14 @@ const pool = new Pool({
 const createTables= async () => {
     const SQL = `
     DROP TABLE IF EXISTS films;
+ DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    is_admin BOOLEAN NOT NULL
+);
+
         CREATE TABLE IF NOT EXISTS films ( 
             id SERIAL PRIMARY KEY,
             title VARCHAR(100) NOT NULL,
@@ -32,6 +40,8 @@ const createTables= async () => {
     `;
     await pool.query(SQL);
     console.log('Tables created successfully');
+
+
 }
 
 

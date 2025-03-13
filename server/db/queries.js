@@ -7,6 +7,8 @@ const createFilmQuery = 'INSERT INTO films (title, year, director, rating, poste
 const updateFilmQuery = 'UPDATE films SET title = $1, year = $2, director = $3, rating = $4, poster = $5 WHERE id = $6 RETURNING *';
 const deleteFilmQuery = 'DELETE FROM films WHERE id = $1';
 const deleteAllFilmsQuery = 'DELETE FROM films';
+//This will query for creating a user
+const createUserQuery = 'INSERT INTO users (username, password, role) VALUES ($1, $2, $3) RETURNING *';
 
 export {
     getFilmsQuery,
@@ -14,5 +16,6 @@ export {
     createFilmQuery,
     updateFilmQuery,
     deleteFilmQuery,
-    deleteAllFilmsQuery
+    deleteAllFilmsQuery,
+    createUserQuery
 };
