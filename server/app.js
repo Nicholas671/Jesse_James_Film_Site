@@ -1,8 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import filmsRoutes from './routes/filmsRoutes.js';
-import { createTables } from './db/db.js';
-import { parseJson, parseUrlEncoded, handleCors } from './middlewares/middlewaresAdmin.js';
+import filmsRoutes from './api/filmsRoutes.js';
+import { createTables } from './db/tables.js';
+import { parseJson, parseUrlEncoded, handleCors } from './controllers/middlewaresController.js';
 
 // Load environment variables
 dotenv.config();

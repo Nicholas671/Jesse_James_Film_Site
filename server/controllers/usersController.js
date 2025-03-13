@@ -5,7 +5,7 @@ import { createUserQuery } from '../db/queries.js';
 const createAdminUser = async (req, res) => {
     const { username, password } = req.body;
     try {
-        const response = await pool.query(createUserQuery, [username, password, 'admin']);
+        const response = await pool.query(createUserQuery, [username, password, true]);
         res.status(201).json(response.rows[0]);
     } catch (err) {
         console.error('Error creating admin user:', err);
